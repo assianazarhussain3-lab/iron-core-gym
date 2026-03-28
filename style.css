@@ -1,0 +1,71 @@
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    /* Hero text ko chota karna taake screen se bahar na jaye */
+    h1 {
+        font-size: 3rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    /* Columns ko ek ke niche ek lana */
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    /* Container ki padding set karna */
+    section {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    /* Images ko mobile par responsive banana */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Inputs aur Buttons ko mobile-friendly banana */
+    input, select, button {
+        width: 100% !important;
+        font-size: 16px !important; /* Mobile keyboard zoom rokne ke liye */
+    }
+}
+
+/* Screen hilane (Horizontal Scroll) se rokne ke liye */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+/* Success Popup Style */
+#successPopup {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #25d366; /* WhatsApp Green */
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#successPopup.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
